@@ -15,48 +15,27 @@ export const AppRoutes: Routes = [
       path: '',
       loadChildren: './authentication/authentication.module#AuthenticationModule'
     }, {
-      path: 'home',
-      loadChildren: './dashboards/dashboard1'
-    }, {
-      path: '**',
-      redirectTo: 'authentication/404'
-    }],
-  }, {
+      path: 'starter',
+      loadChildren: './starter/starter.module#StarterModule'
+    }, ]
+  },
+
+  {
     path: '',
     component: FullComponent,
     children: [{
       path: '',
-      redirectTo: '/dashboards/dashboard1',
+      redirectTo: '/starter',
       pathMatch: 'full'
     }, {
-      path: 'dashboards',
-      loadChildren: './dashboards/dashboards.module#DashboardsModule'
-    }, {
-      path: 'material',
+      path: '',
       loadChildren: './material-component/material.module#MaterialComponentsModule'
     }, {
-      path: 'apps',
-      loadChildren: './apps/apps.module#AppsModule'
-    }, {
-      path: 'forms',
-      loadChildren: './forms/forms.module#FormModule'
-    }, {
-      path: 'tables',
-      loadChildren: './tables/tables.module#TablesModule'
-    }, {
-      path: 'datatables',
-      loadChildren: './datatables/datatables.module#DataTablesModule'
-    }, {
-      path: 'pages',
-      loadChildren: './pages/pages.module#PagesModule'
-    }, {
-      path: 'widgets',
-      loadChildren: './widgets/widgets.module#WidgetsModule'
-    }, {
-      path: 'charts',
-      loadChildren: './charts/chartslib.module#ChartslibModule'
-    }]
-  }, {
+      path: 'starter',
+      loadChildren: './starter/starter.module#StarterModule'
+    }, ]
+  },
+  {
     path: '',
     component: AppBlankComponent,
     children: [{

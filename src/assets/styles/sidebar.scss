@@ -14,6 +14,11 @@ mat-sidenav {
   width: 240px;
   padding-top: 0px;
 }
+
+.mat-sidenav {
+    background-color: #394164;
+}
+
 #snav{
     box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
     .mat-list-item {
@@ -24,11 +29,11 @@ mat-sidenav {
         
         .mat-list-item-content{
             display: block;
-            padding: 0px 15px;
+            padding: 0px 0px;
             &:hover{
                 background: none;
                 > a{
-                  color:$themecolor;
+                  color:#FFb330;
                 }
             }
         }
@@ -57,12 +62,12 @@ mat-sidenav {
             }
         }
         &.selected > .mat-list-item-content > a{
-            background: $themecolor-alt;
+            background: #444E78;
             border-radius: $radius;
             color:$white;
             
             mat-icon{
-                color:$white;
+                color: #FFb330;
             }
             .dd-icon{
                 -webkit-transform: rotate(-180deg);
@@ -109,25 +114,26 @@ use profile section
     background-size:cover;
     
     .profile-img {
-        width: 50px;
-        margin-left: 30px;
-        padding: 31px 0;
-        border-radius: 100%;
+        width: 110px;
+        margin-left: 50px;
+        padding: 25px 0;
+        border-radius: 50%;
+        
         &::before {
             -webkit-animation: 2.5s blow 0s linear infinite;
             animation: 2.5s blow 0s linear infinite;
             position: absolute;
             content: '';
-            width: 50px;
-            height: 50px;
-            top: 31px;
+            width: 110px;
+            height: 110px;
+            top: 25px;
             margin: 0 auto;
             border-radius: 50%;
             z-index: 0;
         }
         @-webkit-keyframes blow {
             0% {
-                box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.699);
                 opacity: 1;
                 -webkit-transform: scale3d(1, 1, 0.5);
                 transform: scale3d(1, 1, 0.5);
@@ -171,14 +177,14 @@ use profile section
         }
     }
     .profile-text {
-        padding: 5px 0px;
+        padding: 0px 0px;
         position: relative;
         cursor: pointer;
         white-space: nowrap;
         > a {
             color: $white!important;
             width: 100%;
-            padding: 6px 30px;
+            padding: 0px 30px;
             background: rgba(0, 0, 0, 0.5);
             display: block;
             white-space: nowrap;
