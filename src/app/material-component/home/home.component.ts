@@ -6,15 +6,6 @@ import * as shape from 'd3-shape';
 import { single, multi, generateData } from './chartData';
 import { colorSets } from '@swimlane/ngx-charts/release/utils/color-sets';
 
-const data: any = require('./data.json');
-
-export interface Chart {
-  type: ChartType;
-  data: Chartist.IChartistData;
-  options?: any;
-  responsiveOptions?: any;
-  events?: ChartEvent;
-}
 
 @Component({
   selector: 'app-home',
@@ -23,28 +14,7 @@ export interface Chart {
 })
 export class HomeComponent implements AfterViewInit {
 
-  barChart1: Chart = {
-    type: 'Bar',
-    data: data['Bar'],
-    options: {
-        seriesBarDistance: 21,
-        axisX: {
-            showGrid: false, offset: 100
-        }
-    },
-    responsiveOptions: [
-        [
-            'screen and (min-width: 640px)',
-            {
-                axisX: {
-                    labelInterpolationFnc: function (value: number, index: number): string {
-                        return index % 4 === 0 ? `W${value}` : null;
-                    }
-                }
-            }
-        ]
-    ]
-};    
+ 
 
 
   ngAfterViewInit() {
