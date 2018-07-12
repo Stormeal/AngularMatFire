@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, EmailValidator } from '@angular/forms';
 import { Observable } from 'rxjs';
 
+import * as tableData from './smart-data-table';
+import { LocalDataSource } from 'ng2-smart-table';
 
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 
@@ -12,19 +14,27 @@ import { EditComponent } from './edit/edit.component';
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.scss']
+  styleUrls: ['./employees.component.scss'],
 })
 
 
 
 export class EmployeesComponent implements AfterViewInit, OnInit {
+
+
   displayedColumns = ['name', 'displayname', 'email', 'phoneno', 'edit', 'pwreset'];
   dataSource: MatTableDataSource<any>;
   userForm: FormGroup;
+  source: LocalDataSource;
 
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private afs: AngularFirestore, public dialog: MatDialog, private fb: FormBuilder, private auth: AuthService, public snackBar: MatSnackBar) { }
+  constructor(private afs: AngularFirestore, public dialog: MatDialog, private fb: FormBuilder, private auth: AuthService, public snackBar: MatSnackBar) {
+    this.source = new LocalDataSource(tableData.data); // create the source
+  }
+
+  settings = tableData.settings;
+  settings2 = tableData.settings2;
 
   ngAfterViewInit() {
     this.afs.collection<any>('employees').valueChanges().subscribe(data => {

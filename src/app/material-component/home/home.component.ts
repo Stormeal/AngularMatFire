@@ -5,7 +5,7 @@ import { ChartType, ChartEvent } from 'ng-chartist';
 import * as shape from 'd3-shape';
 import { single, multi, generateData } from './chartData';
 import { colorSets } from '@swimlane/ngx-charts/release/utils/color-sets';
-
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,67 @@ import { colorSets } from '@swimlane/ngx-charts/release/utils/color-sets';
 })
 export class HomeComponent implements AfterViewInit {
 
- 
+  single: any[];
+  multi: any[];
+  dateData: any[];
+  dateDataWithRange: any[];
+  range = false;
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = false;
+  showXAxisLabel = true;
+  tooltipDisabled = false;
+  xAxisLabel = 'Country';
+  showYAxisLabel = true;
+  showGridLines = true;
+  innerPadding = 0;
+  autoScale = true;
+  timeline = false;
+  barPadding = 8;
+  groupPadding = 0;
+  roundDomains = false;
+  maxRadius = 10;
+  minRadius = 3;
+  view = '';
+  showLabels = true;
+  explodeSlices = false;
+  doughnut = false;
+  arcWidth = 0.25;
+  rangeFillOpacity = 0.15;
+
+  colorScheme = {
+    domain: ['#1e88e5', '#FF5350',]
+  };
+  schemeType = 'ordinal';
+
+  constructor() {
+    Object.assign(this, {
+      single,
+      multi
+    });
+    this.dateData = generateData(6, false);
+    this.dateDataWithRange = generateData(2, true);
+  }
+  get dateDataWithOrWithoutRange() {
+    if (this.range) {
+      return this.dateDataWithRange;
+    } else {
+      return this.dateData;
+    }
+  }
+
+  // line interpolation
+  curve = shape.curveLinear;
+
+  select(data) {
+    console.log('Item clicked', data);
+  }
+
+  onLegendLabelClick(entry) {
+    console.log('Legend clicked', entry);
+  }
 
 
   ngAfterViewInit() {

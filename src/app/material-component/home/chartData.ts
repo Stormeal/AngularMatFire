@@ -30,17 +30,13 @@ export const multi = [
     name: 'Germany',
     series: [
       {
-        name: '2010',
+        name: 'Female',
         value: 40
       },
       {
         name: '2000',
         value: 36
       },
-      {
-        name: '1990',
-        value: 31
-      }
     ]
   },
   {
@@ -54,10 +50,6 @@ export const multi = [
         name: '2000',
         value: 45
       },
-      {
-        name: '1990',
-        value: 37
-      }
     ]
   },
   {
@@ -71,10 +63,6 @@ export const multi = [
         name: '2000',
         value: 34
       },
-      {
-        name: '1990',
-        value: 29
-      }
     ]
   },
   {
@@ -88,10 +76,6 @@ export const multi = [
         name: '2000',
         value: 32
       },
-      {
-        name: '1990',
-        value: 26
-      }
     ]
   }
 ];

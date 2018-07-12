@@ -1,5 +1,5 @@
 import 'hammerjs';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -21,6 +21,8 @@ import { EditDialogComponent } from './users/edit-dialog/edit-dialog.component';
 import { EditComponent } from './employees/edit/edit.component';
 import { NotificationMessageComponent } from './notification-message/notification-message.component';
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { MatDialogActions } from '@angular/material';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
@@ -35,7 +37,9 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     ReactiveFormsModule,
     FlexLayoutModule,
     CdkTableModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    Ng2SmartTableModule,
+    NgxChartsModule
   ],
   providers: [
 
@@ -50,7 +54,10 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     EditDialogComponent,
     EditComponent,
     NotificationMessageComponent
-  ]
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+],
 })
 
 export class MaterialComponentsModule {}

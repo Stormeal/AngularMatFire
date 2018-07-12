@@ -16,7 +16,7 @@ import { MatSnackBar } from '@angular/material';
 @Injectable()
 export class AuthService {
 
-  user: Observable<User | null>;
+  user$: Observable<User>;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -24,7 +24,7 @@ export class AuthService {
     private router: Router,
     private notify: NotifyService,
     public snackBar: MatSnackBar) {
-    this.user = this.afAuth.authState.pipe(
+    this.user$ = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
@@ -74,7 +74,7 @@ export class AuthService {
 
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/authentications/login']);
     });
   }
 
@@ -98,6 +98,37 @@ export class AuthService {
     };
     return userRef.set(data, { merge: true });
   }
+
+
+    ///// Role-based Authorization //////
+
+    canRead(user: User): boolean {
+      const allowed = ['admin', 'editor', 'subscriber']
+      return this.checkAuthorization(user, allowed)
+    }
+  
+    canEdit(user: User): boolean {
+      const allowed = ['admin', 'editor']
+      return this.checkAuthorization(user, allowed)
+    }
+  
+    canDelete(user: User): boolean {
+      const allowed = ['admin']
+      return this.checkAuthorization(user, allowed)
+    }
+  
+  
+  
+    // determines if user has matching role
+    private checkAuthorization(user: User, allowedRoles: string[]): boolean {
+      if (!user) return false
+      for (const role of allowedRoles) {
+        if ( user.roles[role] ) {
+          return true
+        }
+      }
+      return false
+    }
 
 
 }

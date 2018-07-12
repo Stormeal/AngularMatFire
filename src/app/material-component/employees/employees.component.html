@@ -21,21 +21,20 @@
               <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackByUid" class="animate">
 
                 <ng-container matColumnDef="photourl">
-                  <mat-header-cell *matHeaderCellDef > Photo </mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef> Photo </mat-header-cell>
                   <mat-cell *matCellDef="let user"> {{ user.photoURL }} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="name">
                   <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'customWidthClassXLarge'"> Name </mat-header-cell>
                   <span>
-                      <mat-cell *matCellDef="let user" [ngClass]="'customWidthClassXLarge'">
-                          {{ user.name }}
-                          <br> 
-                          {{ user.country }}
-                          
-                         </mat-cell>
+                    <mat-cell *matCellDef="let user" [ngClass]="'customWidthClassXLarge'">
+                      {{ user.name }}
+                      <br> {{ user.country }}
+
+                    </mat-cell>
                   </span>
-                  
+
 
 
                 </ng-container>
@@ -55,11 +54,11 @@
                 <ng-container matColumnDef="phoneno">
                   <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'customWidthClassMedium'"> Phone number </mat-header-cell>
                   <mat-cell *matCellDef="let user" [ngClass]="'customWidthClassMedium'"> {{ user.phoneNo }} </mat-cell>
-                </ng-container> 
+                </ng-container>
 
 
                 <ng-container matColumnDef="edit">
-                  <mat-header-cell *matHeaderCellDef  [ngClass]="'customWidthClass'"> </mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> </mat-header-cell>
                   <mat-cell *matCellDef="let user" [ngClass]="'customWidthClass'">
                     <button mat-raised-button color="primary" (click)="openDialog(user)">Edit</button>
                   </mat-cell>
@@ -68,7 +67,7 @@
                 <ng-container matColumnDef="pwreset">
                   <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClassPW'"></mat-header-cell>
                   <mat-cell *matCellDef="let hacker" [ngClass]="'customWidthClassPW'">
-                    <button mat-raised-button color="warn" (click)="openDialog(hacker)" >Reset Password</button>
+                    <button mat-raised-button color="warn" (click)="openDialog(hacker)">Reset Password</button>
                   </mat-cell>
                 </ng-container>
 
@@ -79,10 +78,19 @@
             </div>
 
 
+            <mat-card>
+              <mat-card-content>
+                <mat-card-title>Filterable Table</mat-card-title>
+                <div class="table table-responsive smart-table">
+                  <ng2-smart-table [settings]="settings2" [source]="source" class=""></ng2-smart-table>
+                </div>
+              </mat-card-content>
+            </mat-card>
+
           </mat-card-content>
         </mat-tab>
 
-        
+
         <mat-tab label="Employee Create" [formGroup]='userForm' (ngSubmit)="signup()">
           <div fxFlex.gt-sm="250" fxFlex.gt-xs="150">
             <mat-card-content>

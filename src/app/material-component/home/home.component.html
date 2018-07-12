@@ -68,8 +68,36 @@
       </div>
       <!-- column -->
 
-      <!-- column -->
+
+      <div fxFlex.gt-md="75">
+        <mat-card>
+          <mat-card-content>
+            <mat-card-title>Users Online</mat-card-title>
+            <div class="w100">
+              <ngx-charts-bar-horizontal-2d class="chart-container" [scheme]="colorScheme" [schemeType]="schemeType" [results]="multi"
+                [gradient]="gradient" [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+                (legendLabelClick)="onLegendLabelClick($event)" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [showGridLines]="showGridLines" [barPadding]="barPadding"
+                [groupPadding]="20" [roundDomains]="roundDomains" (select)="select($event)">
+              </ngx-charts-bar-horizontal-2d>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div fxFlex.gt-md="25">
+        <mat-card>
+          <mat-card-content>
+            <mat-card-title>Most Active Users</mat-card-title>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
+
+
+    <!-- column -->
+
+
 
 
   </mat-card-content>
