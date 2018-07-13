@@ -37,3 +37,9 @@
     mat-progress-bar.my-color .mat-progress-bar-fill::after {
         background-color: white;
       }
+
+      .titleFont {
+          color: #3373ee;
+          font-weight: 500;
+          $font-family: 'Poppins, sans-serif'
+      }

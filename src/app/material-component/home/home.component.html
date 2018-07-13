@@ -69,10 +69,10 @@
       <!-- column -->
 
 
-      <div fxFlex.gt-md="75">
+      <div fxFlex.gt-md="70">
         <mat-card>
           <mat-card-content>
-            <mat-card-title>Users Online</mat-card-title>
+            <mat-card-title class="titleFont">Users Online</mat-card-title>
             <div class="w100">
               <ngx-charts-bar-horizontal-2d class="chart-container" [scheme]="colorScheme" [schemeType]="schemeType" [results]="multi"
                 [gradient]="gradient" [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
@@ -85,10 +85,49 @@
         </mat-card>
       </div>
 
-      <div fxFlex.gt-md="25">
+      <div fxFlex.gt-md="30">
         <mat-card>
           <mat-card-content>
-            <mat-card-title>Most Active Users</mat-card-title>
+            <mat-card-title class="titleFont">Most Active Users</mat-card-title>
+
+
+            <mat-card>
+              <mat-card-content>
+                <mat-card-header>
+                  <div mat-card-avatar>
+                    <img src="assets/images/users/1.jpg" class="img-fluid img-circle" />
+                  </div>
+                  <mat-card-title>Shiba Inu</mat-card-title>
+                  <mat-card-subtitle>Bristol, United Kingdom</mat-card-subtitle>
+                </mat-card-header>
+              </mat-card-content>
+            </mat-card>
+
+
+            <mat-card>
+                <mat-card-content>
+                  <mat-card-header>
+                    <div mat-card-avatar>
+                      <img src="assets/images/users/2.jpg" class="img-fluid img-circle" />
+                    </div>
+                    <mat-card-title>Anne Herhandez</mat-card-title>
+                    <mat-card-subtitle>Hong Kong, China</mat-card-subtitle>
+                  </mat-card-header>
+                </mat-card-content>
+              </mat-card>
+
+              <mat-card>
+                  <mat-card-content>
+                    <mat-card-header>
+                      <div mat-card-avatar>
+                        <img src="assets/images/users/4.jpg" class="img-fluid img-circle" />
+                      </div>
+                      <mat-card-title>Oliver Charles</mat-card-title>
+                      <mat-card-subtitle>Orlanda, US</mat-card-subtitle>
+                    </mat-card-header>
+                  </mat-card-content>
+                </mat-card>
+
           </mat-card-content>
         </mat-card>
       </div>

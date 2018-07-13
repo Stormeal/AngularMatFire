@@ -27,15 +27,41 @@ export const single = [
 
 export const multi = [
   {
-    name: 'Germany',
+    name: 'Spain',
     series: [
       {
-        name: 'Female',
-        value: 40
+        name: '2010',
+        value: 49
       },
       {
         name: '2000',
-        value: 36
+        value: 45
+      },
+    ]
+  },
+  {
+    name: 'Italy',
+    series: [
+      {
+        name: '2010',
+        value: 49
+      },
+      {
+        name: '2000',
+        value: 45
+      },
+    ]
+  },
+  {
+    name: 'Germany',
+    series: [
+      {
+        name: '2010',
+        value: 49
+      },
+      {
+        name: '2000',
+        value: 45
       },
     ]
   },

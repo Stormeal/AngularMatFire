@@ -26,13 +26,12 @@ export class HomeComponent implements AfterViewInit {
   showLegend = false;
   showXAxisLabel = true;
   tooltipDisabled = false;
-  xAxisLabel = 'Country';
   showYAxisLabel = true;
   showGridLines = true;
   innerPadding = 0;
   autoScale = true;
   timeline = false;
-  barPadding = 8;
+  barPadding = 4;
   groupPadding = 0;
   roundDomains = false;
   maxRadius = 10;
@@ -125,7 +124,13 @@ export class HomeComponent implements AfterViewInit {
         highlightLineColor: 'rgba(0, 0, 0, 0.2)',
         highlightSpotColor: '#f86c6b'
       });
+
+
+
+      
     };
+
+    
     let sparkResize;
     (<any>$(window)).resize(function (e) {
       clearTimeout(sparkResize);
