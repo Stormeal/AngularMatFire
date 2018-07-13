@@ -28,6 +28,7 @@
     "@swimlane/ngx-charts": "^7.0.1",
     "@swimlane/ngx-datatable": "^11.1.5",
     "angular-calendar": "^0.22.1",
+    "angular-google-chart": "^0.1.0",
     "angularfire2": "^5.0.0-rc.11",
     "chartist": "^0.11.0",
     "core-js": "^2.4.1",
