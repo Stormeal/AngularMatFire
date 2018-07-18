@@ -1,3 +1,5 @@
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+
 export var settings = {
     columns: {
         id: {
@@ -28,6 +30,13 @@ export var settings = {
       cancelButtonContent: '<i class="ti-close text-danger"></i>',
     },
 };
+
+export var FirebaseData = {
+
+
+
+}
+
 export var settings2 = {
     columns: {
         id: {

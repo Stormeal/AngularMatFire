@@ -25,6 +25,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { MatDialogActions } from '@angular/material';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ChartistModule} from 'ng-chartist';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     CdkTableModule,
     NgxDatatableModule,
     Ng2SmartTableModule,
-    NgxChartsModule
+    NgxChartsModule,
+    ChartistModule
   ],
   providers: [
 

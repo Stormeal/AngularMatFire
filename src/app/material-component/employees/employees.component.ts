@@ -27,20 +27,27 @@ export class EmployeesComponent implements AfterViewInit, OnInit {
   userForm: FormGroup;
   source: LocalDataSource;
 
+
+  
+
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private afs: AngularFirestore, public dialog: MatDialog, private fb: FormBuilder, private auth: AuthService, public snackBar: MatSnackBar) {
     this.source = new LocalDataSource(tableData.data); // create the source
+    this.afs.collection<any>('employees').valueChanges().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+    });
   }
 
   settings = tableData.settings;
   settings2 = tableData.settings2;
 
   ngAfterViewInit() {
-    this.afs.collection<any>('employees').valueChanges().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.sort = this.sort;
-    });
+    // this.afs.collection<any>('employees').valueChanges().subscribe(data => {
+    //   this.dataSource = new MatTableDataSource(data);
+    //   this.dataSource.sort = this.sort;
+    // });
   }
 
   ngOnInit() {
