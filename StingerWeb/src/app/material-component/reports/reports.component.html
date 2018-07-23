@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-content>
+    <!-- ============================================================== -->
+    <!-- Chart boxes -->
+    <!-- ============================================================== -->
+    <div fxLayout="row" fxLayoutWrap="wrap">
+
+      <!-- column -->
+      <div fxFlex.gt-sm="35" fxFlex.gt-xs="100" fxFlex="100">
+        
+      </div>
+      <!-- column -->
+
+
+      <!-- column -->
+      <div fxFlex.gt-sm="65" fxFlex.gt-xs="100" fxFlex="100">
+        <mat-card>
+          <mat-card-content>
+            <mat-card-title>Sales Overview</mat-card-title>
+            <mat-card-subtitle>Ample Admin Vs Material Admin</mat-card-subtitle>
+
+            <div class="barchrt" style="height:360px;">
+              <x-chartist class="" [data]="barChart1.data" [type]="barChart1.type" [options]="barChart1.options" [responsiveOptions]="barChart1.responsiveOptions"
+                [events]="barChart1.events"> </x-chartist>
+            </div>
+            <ul class="list-inline text-center">
+              <li>
+                <h6 class="text-muted text-success m-0">
+                  <i class="fa fa-circle font-10 m-r-10 "></i>Ample</h6>
+              </li>
+              <li>
+                <h6 class="text-muted  text-info  m-0">
+                  <i class="fa fa-circle font-10 m-r-10"></i>Pixel</h6>
+              </li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- column -->
+
+
+
+
+    </div>
+  </mat-card-content>
+</mat-card>
